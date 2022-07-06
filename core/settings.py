@@ -40,9 +40,9 @@ DJANGO_APPS = [
 ]
 
 MY_APPS = [
-    'users',
+    'groups',
     'animals',
-    'breeds'
+    'characteristic'
 ]
 
 
