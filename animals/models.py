@@ -7,8 +7,9 @@ class Animals(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     name = models.CharField(max_length=20)
     
+    
 
-    characteristic = models.ForeignKey(to="characteristic.Characteristic", on_delete=models.CASCADE, related_name="animal")
-    breed = models.ForeignKey(to="groups.Groups", on_delete=models.CASCADE ,related_name="animal" ) 
+    characteristic = models.OneToOneField(to="characteristic.Characteristic", on_delete=models.CASCADE, null=True)
+    group = models.ForeignKey(to="groups.Groups", on_delete=models.CASCADE, null=True, related_name="animals" ) 
 
     # Preciso colocar related_name em breed?
